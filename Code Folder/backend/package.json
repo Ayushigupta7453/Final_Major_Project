@@ -1,0 +1,27 @@
+{
+  "name": "job-auth-backend",
+  "version": "1.0.0",
+  "description": "Backend for Job-Posting Authenticity Checker",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.0",
+    "express": "^4.19.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^8.0.1",
+    "node-fetch": "^3.3.2",
+    "normalize-url": "^8.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
