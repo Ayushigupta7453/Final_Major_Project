@@ -1,14 +1,13 @@
-// /frontend/src/pages/AdminPanel.jsx
+
 import { Routes, Route, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import api from '../services/api';
-import Spinner from '../components/Spinner';          // create a simple Tailwind spinner if you don’t have one
+import Spinner from '../components/Spinner';      
 
-/* ---------- small reusable cell helpers ---------- */
 const Td = ({ children }) => <td className="border-t px-3 py-2">{children}</td>;
 const Th = ({ children }) => <th className="text-left font-semibold px-3 py-2">{children}</th>;
 
-/* ---------- USERS ---------- */
+//users
 const UsersList = () => {
   const [users, setUsers]   = useState([]);
   const [loading, setLoad]  = useState(true);
@@ -45,7 +44,7 @@ const UsersList = () => {
   );
 };
 
-/* ---------- SUBMISSIONS ---------- */
+//SUBMISSIONS 
 const SubsList = () => {
   const [subs, setSubs]   = useState([]);
   const [loading, setLoad] = useState(true);
@@ -86,7 +85,7 @@ const SubsList = () => {
   );
 };
 
-/* ---------- REVIEWS ---------- */
+// REVIEWS 
 const ReviewsList = () => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoad]    = useState(true);
@@ -125,7 +124,7 @@ const ReviewsList = () => {
   );
 };
 
-/* ---------- ADMIN PANEL SHELL ---------- */
+// ADMIN PANEL SHELL 
 const AdminPanel = () => (
   <div className="flex">
     <aside className="w-52 bg-gray-100 dark:bg-gray-900 min-h-screen p-4">

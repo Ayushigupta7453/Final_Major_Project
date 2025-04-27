@@ -1,4 +1,4 @@
-// /frontend/src/App.jsx
+
 import { Routes, Route, Navigate } from 'react-router-dom';
 import LandingPage       from './pages/LandingPage';
 import Login             from './pages/Login';

@@ -1,14 +1,14 @@
-// /frontend/src/components/Header.jsx
+
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-// import DarkModeToggle from './DarkModeToggle';   // keep / remove if you don’t use it
+
 
 const Header = () => {
   const { token, setToken } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    setToken(null);          // AuthProvider will also purge localStorage
+    setToken(null);          
     navigate('/login');
   };
 

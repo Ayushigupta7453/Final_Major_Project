@@ -1,4 +1,4 @@
-// backend/routes/submissions.js
+
 import express from 'express';
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
@@ -9,9 +9,9 @@ import normalizeUrl from 'normalize-url';
 dotenv.config();
 const router = express.Router();
 
-/* -------------------------------------------------- */
-/* helpers                                            */
-/* -------------------------------------------------- */
+
+// helpers 
+
 const canon = (raw) =>
   normalizeUrl(raw, {
     stripProtocol: true,
@@ -21,13 +21,13 @@ const canon = (raw) =>
     stripWWW: false,
   }).toLowerCase();
 
-/** ensure the URL we send to Flask has http/https */
+// ensure the URL we send to Flask has http/https 
 const withProtocol = (url) =>
   url.startsWith('http://') || url.startsWith('https://') ? url : `https://${url}`;
 
-/* -------------------------------------------------- */
-/* POST  /api/submissions  – check a job posting      */
-/* -------------------------------------------------- */
+
+//POST  /api/submissions  – check a job posting 
+
 router.post('/', authenticate, async (req, res) => {
   const { url: rawUrl } = req.body;
   const canonicalUrl = canon(rawUrl);
@@ -63,9 +63,8 @@ router.post('/', authenticate, async (req, res) => {
   }
 });
 
-/* -------------------------------------------------- */
+
 /* GET  /api/submissions/me  – current user’s history */
-/* -------------------------------------------------- */
 router.get('/me', authenticate, async (req, res) => {
   const submissions = await Submission.find({ user: req.user.id }).sort({ createdAt: -1 });
   res.json(submissions);
