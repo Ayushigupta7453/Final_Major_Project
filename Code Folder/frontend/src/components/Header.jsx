@@ -12,7 +12,7 @@ const Header = () => {
     navigate('/login');
   };
 
-  const links = ['/', '/dashboard', '/about', '/contact'];
+  const links = ['/', '/dashboard', '/analytics', '/about', '/contact'];
 
   return (
     <header className="bg-white/80 dark:bg-gray-900/80 backdrop-blur sticky top-0 z-40 shadow">
