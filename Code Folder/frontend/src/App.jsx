@@ -14,6 +14,7 @@ import Header            from './components/Header';
 import Footer            from './components/Footer';
 
 import { AuthProvider, useAuth } from './context/AuthContext';
+import TableuDashboard from './pages/TableuDashboard';
 
 function ProtectedRoute({ children }) {
   const { token } = useAuth();
@@ -34,6 +35,8 @@ function App() {
 
         <Route path="/login"      element={<Login />} />
         <Route path="/register"   element={<Register />} />
+
+        <Route path="/analytics" element={<TableuDashboard/>}/>
 
         {/* <Route path="/dashboard" element={<Dashboard/>}/> */}
 
